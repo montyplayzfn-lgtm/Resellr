@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b09">
+  <meta name="description" content="RESELLR helps you assess clothing resale opportunities.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+  <title>RESELLR — Resale Opportunity Finder</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">R</span> RESELLR</a>
+    <span class="status"><i></i> PRODUCT ANALYSER</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">BUY SMARTER. RESELL BETTER.</p>
+      <h1>Find your next<br><span>resale opportunity.</span></h1>
+      <p class="sub">Check the numbers before you buy. RESELLR helps you estimate whether a clothing item could be worth reselling.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">01 / ITEM DETAILS</p><h2>Analyse a product</h2></div>
+        <span class="tag">BETA</span>
+      </div>
+      <form id="analysis-form">
+        <label>Product name<input id="product" required placeholder="e.g. Vintage Nike track jacket"></label>
+        <div class="two">
+          <label>Brand<input id="brand" placeholder="e.g. Nike"></label>
+          <label>Size<input id="size" placeholder="e.g. Medium"></label>
+        </div>
+        <div class="two">
+          <label>Condition<select id="condition"><option>Like new</option><option>Very good</option><option>Good</option><option>Fair</option></select></label>
+          <label>Platform<select id="platform"><option>Vinted</option><option>Depop</option><option>eBay</option><option>Multiple platforms</option></select></label>
+        </div>
+        <p class="eyebrow form-label">02 / COSTS & PRICE</p>
+        <div class="three">
+          <label>Buy price (£)<input id="buy" type="number" min="0" step="0.01" required placeholder="8"></label>
+          <label>Sale price (£)<input id="sell" type="number" min="0" step="0.01" required placeholder="25"></label>
+          <label>Other costs (£)<input id="costs" type="number" min="0" step="0.01" value="0"></label>
+        </div>
+        <button class="primary" type="submit">Calculate opportunity <span>↗</span></button>
+      </form>
+    </section>
+
+    <section class="result panel" id="result" aria-live="polite">
+      <div class="result-top"><div><p class="eyebrow">YOUR ESTIMATE</p><h2>Potential profit</h2></div><span class="result-icon">↗</span></div>
+      <div class="profit" id="profit">£0.00</div>
+      <p class="muted" id="breakdown">Enter an item and its costs to calculate your estimate.</p>
+      <div class="verdict" id="verdict">Waiting for your first analysis</div>
+      <p class="fine">Estimate only. This does not include platform fees unless you add them under other costs. It does not use live sold-listing or demand data, and profit is never guaranteed.</p>
+      <button class="secondary" id="save" disabled>Save this research</button>
+    </section>
+
+    <section class="panel saved-panel">
+      <div class="panel-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>Saved research</h2></div><span class="count" id="count">0 SAVED</span></div>
+      <div id="saved-list" class="empty">Your saved product research will appear here on this device.</div>
+    </section>
+    <footer>RESELLR <span>·</span> Make informed buying decisions.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
